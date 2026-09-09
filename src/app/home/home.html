@@ -1,0 +1,95 @@
+<section class="min-h-screen flex items-center justify-center px-6">
+  <div class="max-w-3xl text-center">
+
+    <h1 class="text-3xl md:text-4xl font-light text-gray-600">
+      <span class="font-bold text-gray-900">
+        Hi, I'm Carlos Collaguazo.
+      </span>
+      <br />
+      Software engineer passionate about building end-to-end full-stack applications.
+    </h1>
+
+    <img class="mx-auto mt-10 w-52 md:h-64 md:w-64 rounded-full object-cover"
+      src="/images/profile-image.jpg"
+      alt="Carlos Collaguazo"
+      />
+
+    <div class="mt-8 flex justify-center gap-6 text-gray-600">
+      <a href="mailto:your@email.com">
+        <svg class="w-10 h-10 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none">
+          <use xlink:href="./sprite.svg#email" />
+        </svg>
+      </a>
+      <a href="https://www.linkedin.com/in/carlos-collaguazo-pulupa/" target="_blank">
+        <svg class="w-10 h-10 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor">
+          <use xlink:href="./sprite.svg#linkedin" />
+        </svg>
+      </a>
+      <a href="https://github.com/carlinbrr" target="_blank">
+        <svg class="w-10 h-10 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor">
+          <use xlink:href="./sprite.svg#github" />
+        </svg>
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<section class="bg-gray-50 px-6 py-20">
+  <div class="mx-auto max-w-4xl">
+
+    <div class="mb-12 text-center">
+      <p class="text-sm font-semibold uppercase tracking-widest text-blue-600">
+        Experience
+      </p>
+      <h2 class="mt-2 text-3xl font-bold text-gray-900">
+        My professional journey
+      </h2>
+      <p class="mt-3 text-gray-600">
+        Experience across financial services, transportation systems and enterprise software.
+      </p>
+    </div>
+
+    <div class="rounded-xl border border-blue-100 bg-blue-50 p-5 text-center">
+      <p class="font-semibold text-gray-900">
+        Currently based in Helsinki, Finland
+      </p>
+      <p class="mt-1 text-sm text-gray-600">
+        Open to full-stack or back-end software engineering opportunities.
+      </p>
+    </div>
+
+    <div class="space-y-6">
+      @for (experience of experiences(); track $index) {
+        <div class="mx-auto h-8 w-px bg-gray-300 -my-px"></div>
+        <app-experience-card
+          [experience]="experience"
+         />
+      }
+    </div>
+
+  </div>
+</section>
+
+<section class="px-6 py-20">
+  <div class="mx-auto max-w-5xl">
+
+    <div class="mb-12 text-center">
+      <p class="text-sm font-semibold uppercase tracking-widest text-blue-600">
+        Technical Skills
+      </p>
+      <h2 class="mt-2 text-3xl font-bold text-gray-900">
+        Technologies and practices I work with
+      </h2>
+    </div>
+
+    <div class="grid gap-6 sm:grid-cols-2">
+      @for (stack of stacks(); track $index) {
+        <app-stack-card
+          [stack]="stack"
+        />
+      }
+    </div>
+
+  </div>
+</section>

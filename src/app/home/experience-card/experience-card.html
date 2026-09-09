@@ -1,0 +1,42 @@
+<article class="rounded-xl border border-gray-200 bg-white p-6">
+
+  <div class="flex items-start gap-4">
+    <img class="h-14 w-14 rounded"
+      [src]="experience().logo"
+      [alt]="experience().company + ' logo'"
+      />
+    <div>
+      <h3 class="text-xl font-semibold text-gray-900">
+        {{ experience().role }}
+      </h3>
+      <p class="font-medium text-gray-700">
+        {{ experience().company }}
+      </p>
+      <p class="mt-1 text-sm text-gray-500">
+        {{ experience().period }} · {{ experience().location }}
+      </p>
+    </div>
+  </div>
+
+  <p class="mt-5 text-gray-600">
+    {{ experience().description }}
+  </p>
+
+  <p class="mt-5 text-gray-600">Key highlights:</p>
+
+  <ul class="mt-4 space-y-2 text-gray-600">
+    @for (highlight of experience().highlights; track $index) {
+      <li>• {{ highlight }}</li>
+    }
+  </ul>
+
+  <div class="mt-5 flex flex-wrap gap-2">
+    @for (technology of experience().technologies; track $index) {
+      <span
+        class="rounded-full bg-gray-100 px-3 py-1 text-sm text-gray-700">
+        {{ technology }}
+      </span>
+    }
+  </div>
+
+</article>
