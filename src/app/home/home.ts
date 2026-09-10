@@ -56,25 +56,25 @@ export class Home {
   stacks = signal<Stack[]>([
     {
       name: 'Backend',
-      icon: './sprite.svg#backend',
+      icon: '/sprite.svg#backend',
       technologies: ['Java', 'Spring', 'Spring Boot', 'JUnit', 'Mockito', 'Maven'],
       practices: ['SOLID', 'Test-driven Development (TDD)', 'Domain-driven Design (DDD)', 'Hexagonal Architecture', 'REST APIs', 'Microservices Architecture', 'Event-driven Architecture']
     },
     {
       name: 'Frontend',
-      icon: './sprite.svg#frontend',
+      icon: '/sprite.svg#frontend',
       technologies: ['Angular', 'NgRx', 'TypeScript', 'HTML', 'CSS', 'Tailwind'],
       practices: ['Single Page Application (SPA)', 'Responsive', 'Redux pattern', 'Zoneless']
     },
     {
       name: 'Data',
-      icon: './sprite.svg#data',
+      icon: '/sprite.svg#data',
       technologies: ['PostgreSQL', 'Oracle', 'Hibernate'],
       practices: ['ACID', 'Query Optimization', 'Database Migrations']
     },
     {
       name: 'DevOps',
-      icon: './sprite.svg#devops',
+      icon: '/sprite.svg#devops',
       technologies: ['AWS', 'Docker', 'Kubernetes', 'AWS CDK', 'Bash', 'GitHub Actions'],
       practices: ['CI/CD', 'Infrastructure as Code (IaC)']
     }
