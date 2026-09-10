@@ -41,6 +41,7 @@ jobs:
     name: Deploy
     needs: build
     runs-on: ubuntu-24.04
+    environment: AWS
     steps:
       - name: Download Build Artifact
         uses: actions/download-artifact@v8
