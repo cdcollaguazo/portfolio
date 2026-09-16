@@ -3,7 +3,7 @@ import { Experience } from '../experience';
 
 @Component({
   selector: 'app-experience-card',
-  templateUrl: './experience-card.html',
+  templateUrl: './experience-card.html'
 })
 export class ExperienceCard {
 
