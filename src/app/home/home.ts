@@ -7,7 +7,7 @@ import { StackCard } from './stack-card/stack-card';
 @Component({
   selector: 'app-home',
   imports: [ExperienceCard, StackCard],
-  templateUrl: './home.html',
+  templateUrl: './home.html'
 })
 export class Home {
 
@@ -58,13 +58,13 @@ export class Home {
       name: 'Backend',
       icon: '/sprite.svg#backend',
       technologies: ['Java', 'Spring', 'Spring Boot', 'JUnit', 'Mockito', 'Maven'],
-      practices: ['SOLID', 'Test-driven Development (TDD)', 'Domain-driven Design (DDD)', 'Hexagonal Architecture', 'REST APIs', 'Microservices Architecture', 'Event-driven Architecture']
+      practices: ['SOLID', 'TDD', 'DDD', 'Hexagonal Architecture', 'REST APIs', 'Microservices Architecture', 'Event-driven Architecture']
     },
     {
       name: 'Frontend',
       icon: '/sprite.svg#frontend',
       technologies: ['Angular', 'NgRx', 'TypeScript', 'HTML', 'CSS', 'Tailwind'],
-      practices: ['Single Page Application (SPA)', 'Responsive', 'Redux pattern', 'Zoneless']
+      practices: ['SPA', 'Responsive', 'Redux pattern', 'Zoneless']
     },
     {
       name: 'Data',
@@ -76,7 +76,7 @@ export class Home {
       name: 'DevOps',
       icon: '/sprite.svg#devops',
       technologies: ['AWS', 'Docker', 'Kubernetes', 'AWS CDK', 'Bash', 'GitHub Actions'],
-      practices: ['CI/CD', 'Infrastructure as Code (IaC)']
+      practices: ['CI/CD', 'IaC']
     }
   ]);
 
