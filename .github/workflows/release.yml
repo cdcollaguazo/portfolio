@@ -41,7 +41,7 @@ jobs:
     name: Deploy
     needs: build
     runs-on: ubuntu-24.04
-    environment: AWS
+    environment: Prod
     steps:
       - name: Download Build Artifact
         uses: actions/download-artifact@v8
@@ -58,18 +58,28 @@ jobs:
 
       - name: Upload Assets to S3
         env:
-          S3_BUCKET_NAME: ${{ vars.S3_BUCKET_NAME }}
+          PLATFORM_NAME: ${{ vars.PLATFORM_NAME }}
         run: |
-          set -u
+          set -eu
+
+          S3_BUCKET_NAME=$(aws ssm get-parameter \
+            --name "/${PLATFORM_NAME}/s3/bucket-name" \
+            --query "Parameter.Value" \
+            --output text)
 
           echo "Uploading frontend assets to S3..."
           aws s3 sync dist/portfolio/browser s3://$S3_BUCKET_NAME --delete
 
       - name: Invalidate CloudFront Distribution
         env:
-          CF_DISTRIBUTION_ID: ${{ vars.CF_DISTRIBUTION_ID }}
+          PLATFORM_NAME: ${{ vars.PLATFORM_NAME }}
         run: |
-          set -u
+          set -eu
+
+          CF_DISTRIBUTION_ID=$(aws ssm get-parameter \
+            --name "/${PLATFORM_NAME}/cf/distribution-id" \
+            --query "Parameter.Value" \
+            --output text)
 
           echo "Invalidating CloudFront distribution..."
           aws cloudfront create-invalidation \
